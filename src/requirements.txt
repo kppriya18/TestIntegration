@@ -5,7 +5,7 @@ robotframework-requests==0.9.1
 urllib3==1.25.8
 robotframework-databaselibrary==1.2.4
 pyodbc==4.0.30
-adodbapi
+// adodbapi
 pywin32
 
 robotframework-excellib==2.0.1
