@@ -6,7 +6,7 @@ urllib3==1.25.8
 robotframework-databaselibrary==1.2.4
 pyodbc==4.0.30
 # adodbapi
-pywin32
+# pywin32
 
 robotframework-excellib==2.0.1
 openpyxl==3.1.2
