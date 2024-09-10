@@ -23,5 +23,5 @@ jobs:
 
     - name: Run tests
       run: |
-        echo "Dependency installation completed"
+        echo "Dependency installation completed Successfully"
 
