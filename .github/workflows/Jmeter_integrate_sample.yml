@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
       - name: JMeter Test
         uses: QAInsights/PerfAction@v5.6.2
         with:
