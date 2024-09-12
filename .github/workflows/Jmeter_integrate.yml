@@ -22,13 +22,15 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y jmeter
 
+    - name: Allow ScriptWrapper class
+      run: sudo echo "xstream.whitelist=org.apache.jmeter.save.ScriptWrapper" >> sudo tee -a  /usr/share/jmeter/bin/jmeter.properties
+    
+
     - name: Run JMeter Test
       run: |
         jmeter -n -t Tests/MainPage_Test.jmx -l results.jtl
 
-    - name: Allow ScriptWrapper class
-      run: sudo echo "xstream.whitelist=org.apache.jmeter.save.ScriptWrapper" >> sudo tee -a  /usr/share/jmeter/bin/jmeter.properties
-  
+   
 
     - name: Upload Results
       uses: actions/upload-artifact@v3
