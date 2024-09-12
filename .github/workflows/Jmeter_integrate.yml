@@ -27,7 +27,7 @@ jobs:
         jmeter -n -t Tests/MainPage_Test.jmx -l results.jtl
 
     - name: Allow ScriptWrapper class
-      run: sudo echo "xstream.whitelist=org.apache.jmeter.save.ScriptWrapper" >> /usr/share/jmeter/bin/jmeter.properties
+      run: sudo echo "xstream.whitelist=org.apache.jmeter.save.ScriptWrapper" >> sudo tee -a  /usr/share/jmeter/bin/jmeter.properties
   
 
     - name: Upload Results
