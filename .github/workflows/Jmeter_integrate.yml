@@ -25,6 +25,8 @@ jobs:
     - name: Allow ScriptWrapper class
       run: sudo echo "xstream.whitelist=org.apache.jmeter.save.ScriptWrapper" >> sudo tee -a  /usr/share/jmeter/bin/jmeter.properties
     
+    - name: Copy custom jmeter.properties
+      run: sudo cp custom_jmeter.properties /usr/share/jmeter/bin/jmeter.properties
 
     - name: Run JMeter Test
       run: |
