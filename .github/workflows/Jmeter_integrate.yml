@@ -26,9 +26,17 @@ jobs:
       run: |
         jmeter -n -t Tests/MainPage_Test.jmx -l results.jtl
 
+    - name: Allow ScriptWrapper class
+      run: echo "xstream.whitelist=org.apache.jmeter.save.ScriptWrapper" >> /usr/share/jmeter/bin/jmeter.properties
+  
+
     - name: Upload Results
       uses: actions/upload-artifact@v3
       with:
           name: jmeter-results
           path: result.jtl
           if-no-files-found: error
+
+
+
+ 
