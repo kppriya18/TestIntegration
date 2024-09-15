@@ -23,7 +23,7 @@ jobs:
         # sudo apt-get install -y jmeter
         sudo wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz
         sudo tar xf apache-jmeter-5.5.tgz
-        sudo pushd apache-jmeter-5.5/bin/ && ./jmeter.sh
+        # sudo pushd apache-jmeter-5.5/bin/ && ./jmeter.sh
 
     - name: Allow ScriptWrapper class
       run: sudo echo "xstream.whitelist=org.apache.jmeter.save.ScriptWrapper" >> sudo tee -a  /usr/share/jmeter/bin/jmeter.properties
