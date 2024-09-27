@@ -1,0 +1,15 @@
+name: Test Scripts
+
+on: 
+    workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print Test env
+      run: |
+        $input_string = "project-cw-qaa-123455"
+        test_env=$(echo $input_string | cut -d'-' -f3)
+        echo "$test_env"
