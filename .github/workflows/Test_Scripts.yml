@@ -11,5 +11,5 @@ jobs:
     - name: Print Test env
       run: |
         $input_string = "project-cw-qaa-123455"
-        test_env=$(echo $input_string | cut -d'-' -f3)
-        echo "$test_env"
+        # test_env=$(echo $input_string | cut -d'-' -f3)
+        echo "$input_string"
