@@ -11,5 +11,5 @@ jobs:
       - name: Extract 3 characters from input string
         run: |
           input_string="project-cw-qaa-123455"
-          extracted_chars=$(echo $input_string | awk -F'-' {$3})
+          extracted_chars=$(echo $input_string | awk -F'-' '{"Value :" $3}')
           echo "Extracted Characters: $extracted_chars"
