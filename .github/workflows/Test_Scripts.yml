@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Print Test env
-      run: |
-        $input_string = "project-cw-qaa-123455"
-        # test_env=$(echo $input_string | cut -d'-' -f3)
-        echo "$input_string"
+      - name: Extract 3 characters from input string
+        run: |
+          input_string="project-cw-qaa-123455"
+          extracted_chars=$(echo $input_string | awk -F'-' {$3})
+          echo "Extracted Characters: $extracted_chars"
