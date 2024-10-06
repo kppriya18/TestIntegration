@@ -20,5 +20,5 @@ jobs:
       - name: Print resource group
         run: |
           $test_env = ${{ steps.test_env.outputs.test_env }}
-          echo "Searching for 'firefly- $test_env' resource groups..."
+          echo "Searching for firefly- $test_env resource groups..."
           
