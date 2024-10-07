@@ -15,11 +15,11 @@ jobs:
         run: |
           input_string="project-cw-qaa-123455"
           extracted_env=$(echo $input_string | awk -F'-' '{print $3}')
-          echo "test_env= $extracted_env" >> $GITHUB_OUTPUT
+          echo "test_env=$extracted_env" >> $GITHUB_ENV
 
       - name: Print resource group
         run: |
-          $test_env = ${{ steps.test_env.outputs.test_env }}
-          echo "Searching for firefly- $test_env resource groups..."
+          test_env = ${{ steps.test_env.outputs.test_env }}
+          echo "Searching for project- $test_env resource groups..."
           echo $test_env
           
