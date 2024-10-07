@@ -18,8 +18,8 @@ jobs:
           echo "test_env=$extracted_env" >> $GITHUB_ENV
 
       - name: Print resource group
+        env:
+          test_env: ${{ steps.test_env.outputs.test_env }}
         run: |
-          test_env = ${{ steps.test_env.outputs.test_env }}
-          echo "Searching for project- $test_env resource groups..."
           echo $test_env
           
