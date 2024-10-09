@@ -1,0 +1,25 @@
+name: Test Scripts for workflow from main
+
+on: 
+    workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # outputs:
+    #   test_env: ${{ steps.test_env.outputs.test_env }}
+
+    steps:
+      - name: Extract 3 characters from input string
+        id: test_env
+        run: |
+          input_string="project-cw-qaa-123455"
+          extracted_env=$(echo $input_string | awk -F'-' '{print $3}')
+          echo "test_env=$extracted_env" >> $GITHUB_ENV
+
+      - name: Print resource group
+        # env:
+        #   test_env: ${{ steps.test_env.outputs.test_env }}
+        run: |
+          echo $test_env
+          
