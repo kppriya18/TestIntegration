@@ -16,6 +16,7 @@ jobs:
           input_string="project-cw-qaa-123455"
           extracted_env=$(echo $input_string | awk -F'-' '{print $3}')
           echo "test_env=$extracted_env" >> $GITHUB_ENV
+          echo "test"
 
       - name: Print resource group
         # env:
