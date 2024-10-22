@@ -2,8 +2,6 @@ name: Create Jira Ticket
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   create_jira_ticket:
