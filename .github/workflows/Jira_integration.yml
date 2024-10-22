@@ -20,7 +20,7 @@ jobs:
         uses: atlassian/gajira-create@v3
         with:
           project: "SCRUM"
-          summary: "New issue from GitHub Actions"
+          summary: "New issue from GitHub Actions pipeline"
           description: "This issue was created automatically from a GitHub Actions workflow."
           issuetype: "Task"
         env:
