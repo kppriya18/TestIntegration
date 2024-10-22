@@ -1,0 +1,25 @@
+name: Create Jira Ticket
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_jira_ticket:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Jira issue
+        uses: atlassian/gajira-create@v3
+        with:
+          project: "SCRUM"
+          summary: "New issue from GitHub Actions"
+          description: "This issue was created automatically from a GitHub Actions workflow."
+          issuetype: "Task"
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
