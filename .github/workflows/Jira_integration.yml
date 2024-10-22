@@ -10,6 +10,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Create config.yml if it does not exist
+        run: |
+          mkdir -p /home/runner/jira
+          touch /home/runner/jira/config.yml
+
+
       - name: Create Jira issue
         uses: atlassian/gajira-create@v3
         with:
